@@ -108,14 +108,14 @@ const createBalancesDetailViewRow = (
       <Tooltip
         tooltip={translateRaw('WALLET_BREAKDOWN_BALANCE_TOOLTIP', {
           $exchangeRate: (balance.exchangeRate || 0).toFixed(3),
-          $fiatTicker: fiat.code,
+          $fiatTicker: fiat.ticker,
           $cryptoTicker: balance.ticker
         })}
       >
         <Currency
           amount={balance.fiatValue.toString()}
           symbol={fiat.symbol}
-          code={fiat.code}
+          ticker={fiat.ticker}
           decimals={2}
         />
       </Tooltip>
@@ -160,7 +160,7 @@ const createAccountRow = (
       <Currency
         amount={balanceAccount.fiatValue.toString()}
         symbol={fiat.symbol}
-        code={fiat.code}
+        ticker={fiat.ticker}
         decimals={2}
       />
     </RowAlignment>,
